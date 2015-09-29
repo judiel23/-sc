@@ -1,0 +1,5 @@
+Options +FollowSymLinks -Multiviews
+
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z_-]*)$ controlador/tarea.php?sol=$1 [L,QSA]
