@@ -1,5 +1,5 @@
-atevir<?php
-class connex{
+<?php
+Class connex{
 	private $usuario;
 	private $clave;
 	private $servidor;
@@ -8,10 +8,10 @@ class connex{
 	private $mysqlconn;
 
 	public function connex(){
-		$this->usuario='root';
-		$this->clave='';
-		$this->servidor='localhost';
-		$this->bd='movilnet';
+		$this->usuario='atevir';
+		$this->clave='atevir';
+		$this->servidor='192.168.210.130';
+		$this->bd='sci';
 		$this->puerto='3306';
 		$this->mysqlconn=' ';
 

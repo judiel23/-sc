@@ -1,30 +1,39 @@
 <?php
-class Connex{
-	private $usuario;
-	private $clave;
-	private $servidor;
-	private $bd;
-	private $puerto;
-	private $mysqlconn;
+class Connex extends PDO{
+    private $user;
+    private $clave;
+    private $servidor;
+    private $db;
+    private $port;
+    private $conn;
 
-	public function connex(){
-		$this->usuario='root';
-		$this->clave='';
-		$this->servidor='localhost';
-		$this->bd='todo';
-		$this->puerto='3306';
-		$this->mysqlconn=' ';
-
-		}
-		public function conectar(){
-		$this->mysqlconn= mysqli_connect($this->servidor,$this->usuario,$this->clave,$this->bd) or die ("ERROR DE CONEXION:".mysqli_error($mysqlconn));
-		$mysqlconn=$this->mysqlconn;
-		return $this->mysqlconn;
-	if ($mysqlconn){
-		echo "conectado";
-		}
-		}
-	}
+    function __construct()
+    {
+        $this->user = 'root';
+        $this->clave='';
+        $this->servidor ='localhost';
+        $this->db = 'movilnet';
+        $this->port = 3306;
+        $this->conn='';
 
 
+try {
+        $this->conn = parent::__construct("mysql:host=localhost;dbname=movilnet",$this->user,$this->clave);
+
+    }catch(PDOException $e)
+    {
+    echo $e->getMessage();
+    }
+    }
+
+    public function getConn(){
+        return $this->conn;
+    }
+    public function close_con()
+    {
+
+        $this->conn = null;
+
+    }
+}
 ?>
