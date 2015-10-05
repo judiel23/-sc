@@ -7,20 +7,22 @@ $data = new Spreadsheet_Excel_Reader("tw.xls");
 
 
 
-for ($i=0; $i < $data->colcount(); $i++) {
+for ($i=1; $i <=$data->colcount(); $i++) {
 	//for ($j=0; $j< $data->rowcount(); $j++) {
 		# code...
 
 
-	$col= $data->val(1,$i);
-	$query="ALTER TABLE twitter_temp ADD ".$col."  varchar(200)";
-	$c=$con->query($query);
+	$col= $data->val(1,$i).',';
+	//$query="ALTER TABLE twitter_temp ADD ".$col."  varchar(200)";
+	//$c=$con->query($query);
 
 
 	//}
 
-
+	//$c=$con->query($query);
 }
+$query="insert into twitter_temp ('$col') values('$col')";
+
 
 
 

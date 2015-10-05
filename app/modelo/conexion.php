@@ -18,7 +18,8 @@ class Connex extends PDO{
 
 
 try {
-        $this->conn = parent::__construct("mysql:host=localhost;dbname=movilnet",$this->user,$this->clave);
+        $this->conn = new PDO("mysql:host=localhost;dbname=movilnet",$this->user,$this->clave);
+
 
     }catch(PDOException $e)
     {
@@ -26,8 +27,13 @@ try {
     }
     }
 
-    public function getConn(){
-        return $this->conn;
+    public function orm()
+    {
+        require('NotORM.php');
+
+            $orm=new NotORM($this->conn);
+            return $orm;
+
     }
     public function close_con()
     {

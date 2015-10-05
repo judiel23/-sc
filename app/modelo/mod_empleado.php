@@ -15,17 +15,23 @@ class Empleado extends Connex
 
 public function __construct(){
 	$this->conn=new Connex;
+  $this->conn= $this->conn->orm();
 }
 
 
-    public function ()
+    public function crear()
     {
- 		$query = $this->conn->query("")or die("Consulta errónea: ".;
-		if ($query)
-		{
-			return $query;
-		}
+
 	}
+  public function listar(){
+      $empleados=array();
+      foreach ($this->conn->empleado() as $empleado) {
+          $empleados[] =array(
+            'nombre'=>$empleado['emp_nombre']
+            );
+      }
+      return $empleados;
+  }
 
 }
 ?>
