@@ -21,7 +21,9 @@ public function __construct(){
 
     public function crear()
     {
-
+      $ar=  array('emp_nombre' => 'jolin', );
+        $q=$this->conn->empleado()->insert($ar);
+            return $q;
 	}
   public function listar(){
       $empleados=array();
@@ -31,6 +33,11 @@ public function __construct(){
             );
       }
       return $empleados;
+  }
+
+    public function buscar($ci){
+        $empleado=$this->conn->empleado()->where('emp_cedula',$ci);
+      return $empleado;
   }
 
 }
