@@ -40,7 +40,7 @@ class reporte {
 		}//function con_ges
 		public function con_asu($mysqlconn){
 
-		$query= "SELECT con_asun, COUNT( * ) AS num FROM conatel GROUP BY con_asun";
+		$query= "SELECT con_tipocas, COUNT( * ) AS num FROM conatel GROUP BY con_tipocas";
 		$consulta= mysqli_query($mysqlconn, $query) or die ("Consulta Errónea: ".mysqli_error($mysqlconn));
 
 		return $consulta;

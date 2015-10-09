@@ -127,7 +127,7 @@ if($resultado){
 			 for($i=0; $i<mysqli_num_rows($resultado); $i++){
  $row= mysqli_fetch_array($resultado, MYSQLI_ASSOC);
  $a=$row["num"];
- $b=$row["con_asun"];
+ $b=$row["con_tipocas"];
 
  $array[$i] = array( 'label'=>$b,'value' =>$a );
 
