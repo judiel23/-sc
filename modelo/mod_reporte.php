@@ -1,8 +1,10 @@
 <?php
 class reporte {
-
+private $desde;
+private $hasta;
 
 	private $mysqlconn;
+
 
 		public function garantia($mysqlconn){
 
@@ -14,7 +16,7 @@ class reporte {
 		}//function garantia
         public function info($mysqlconn){
 
-		$query= "SELECT in_nomges, COUNT( * ) AS num FROM info GROUP BY in_nomges";
+        		$query= "SELECT in_nomges,  COUNT( * ) AS num FROM info GROUP BY in_nomges ";
 		$consulta= mysqli_query($mysqlconn, $query) or die ("Consulta Errónea: ".mysqli_error($mysqlconn));
 
 		return $consulta;

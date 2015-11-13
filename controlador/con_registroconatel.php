@@ -8,6 +8,7 @@ require('../modelo/mod_connex.php');
 $con_gestor= $_POST['gestor'];
 $con_numcas= $_POST['numcas'];
 $con_feulac= $_POST['feulac'];
+$con_fechac= $_POST['fechac'];
 $con_asun= $_POST['asun'];
 $con_estatus= $_POST['estatus'];
 $con_nomusu= $_POST['nomusu'];
