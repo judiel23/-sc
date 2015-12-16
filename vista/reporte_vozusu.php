@@ -51,7 +51,7 @@ if(!isset($_SESSION['emp_login'])){
 
 										<h2><a href="#">Reporte Voz del Usuario</a></h2>
 										<hr>
-                    <div align="right"><a href="../controlador/bdexcel_conatel.php">Exportar Data</a></div>
+                    <div align="right"><a href="../controlador/bdexcel_vozusu.php">Exportar Data</a></div>
 
 									</header>
 									<div class="info">
